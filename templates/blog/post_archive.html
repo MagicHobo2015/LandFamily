@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+    {% block content %}
+        {% for post in latest %}
+            <div class="main-content">
+                  <center>
+                <div class="main-header"><a href="{% url 'Post-Detail' post.pk %}"> {{ post.title | safe }}</a>
+                    <hr> {{ post.date_posted }}</div>
+                 </center>
+            </div>
+        {% endfor %}
+    {% endblock %}

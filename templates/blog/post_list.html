@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+    {% block content %}
+        {% for post in posts %}
+            <div class="main-content">
+                <div class="main-header">
+                    <h1> {{ post.title | safe }}</h1>
+                    <br><hr>
+                </div>
+            <p>
+                {{ post.content |safe | linebreaks }}
+            </p>
+            <hr>
+            <p><center>By: {{ post.author }} &emsp;|&emsp; Date Posted: {{ post.date_posted }}</center></p>
+            </div>
+        {% endfor %}
+    {% endblock %}

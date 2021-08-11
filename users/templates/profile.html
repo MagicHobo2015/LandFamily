@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+    {% block content %}
+        <div class="card">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+               <h3> {{ user.username }} </h3>
+            <h4>{{ user.email }}</h4>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">First Name: &emsp; {{ user.first_name }}</li>
+                <li class="list-group-item">Last Name: &emsp; {{ user.last_name }}</li>
+                <li class="list-group-item">Bio: <p>{{ user.profile.bio }}</p></li>
+            </ul>
+            <a class="btn btn-info" href="{% url 'profile_update' %}">Update Profile</a>
+        </div>
+        </div>
+
+
+
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+    {% block content %}
+        <div class="main-content">
+            <div class="main-header">
+                <h1>{{ object.title | safe }}</h1>
+                <hr>
+            </div>
+        <p>{{ object.content | safe | linebreaks }}</p>
+        <hr>
+        <p><center>By: {{ object.author }} &emsp;|&emsp; Date Posted: {{ object.date_posted }}
+            <hr>
+         <a class="btn btn-info" href="{% url 'post-comment' post.id %}">Comment</a>
+        {% if user.is_staff%}
+            <a class="btn btn-danger" href="{% url 'post-delete' object.pk %}">Remove Post</a></center>
+        {% endif %}
+        </center></p>
+        </div><center>
+        {% for comment in comments %}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+      <img src="{{ comment.author.profile.image.url }}" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">{{ comment.content }}</p>
+          <p class="card-text">-{{ comment.author }}</p>
+        <p class="card-text"><small class="text-muted">{{ comment.date_posted }}</small></p>
+             {% if user.id == comment.author.id %}
+
+          <a class="btn btn-warning" href="{% url 'comment-update' comment.pk %}">Edit Post</a>
+      {% endif %}
+          {% if user.id == comment.author.id or user.is_staff %}
+              <a class="btn btn-danger" href="{% url 'comment-delete' comment.pk %}">Remove Comment</a>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+        {% endfor %}
+    </center>
+    {% endblock %}

@@ -1,0 +1,81 @@
+.bg-steel{
+background-color: #b8bbbf;
+}
+
+h3 {
+	color: #000000;
+}
+
+
+
+.navbar{
+	border-bottom: 1px solid black;
+}
+
+.navbar-brand{
+	font-weight: bold;
+	color: black;
+}
+
+.nav-link {
+	font-weight: bold;
+	color: black;
+}
+
+.content-section {
+  background: #b8bbbf;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.body {
+	padding: 70px;
+	background-color: lightblue;
+}
+
+.list-group {
+	list-style-type: none;
+}
+
+.list-group-item {
+	background: whitesmoke;
+	color: black;
+	font-weight: bold;
+}
+
+.main-content{
+	font-family: American Typewriter, Serif;
+	font-size: 30px;
+	background: white;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border: 1px solid black;
+	border-radius: 6px;
+
+
+}
+
+.main-header{
+	background: whitesmoke;
+}
+
+.account-img{
+	height: 300px;
+	width: 300px;
+}
+
+.comment{
+	background: white;
+	border: 1px solid black;
+	font-size: 20px;
+	padding: 10px 20px;
+	margin-bottom: 5px;
+}
+
+.btn-info{
+	background-color: black;
+}
+
+

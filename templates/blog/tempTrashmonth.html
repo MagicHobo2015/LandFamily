@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in object_list %}
+
+        <div class="main-content">
+            <div class="main-header">
+                    <a href="{% url 'Post-Detail' pk=post.pk %}">
+                <h1> {{ post.title | safe }} </h1>
+                    </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
